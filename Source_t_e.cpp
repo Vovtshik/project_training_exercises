@@ -4,8 +4,10 @@
 
 int main()
 {
-using namespace std;
+    using namespace std;
 
+
+/* // exercise 1
 {
     int i = 5;
     do {
@@ -13,5 +15,5 @@ using namespace std;
     } while(i-- > 0);
     cout << --i;
     // result: 543210-2
-}
+} */
 }
