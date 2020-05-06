@@ -23,11 +23,11 @@ int main()
     for(int i = 5; i > 0; i--)
         cout << i;
     cout << i;
-    // result: ошибка компиляции
+    // result: compilation error
 } 
 */
 
-
+/* 
 // exercice 3
  void F(int& x, int& y)
 {
@@ -38,4 +38,5 @@ int main()
     int a = 5;
     F(a, 6);
     cout << a;
-}
+    // result: compilation error
+} */
