@@ -12,5 +12,6 @@ using namespace std;
         cout << i;
     } while(i-- > 0);
     cout << --i;
+    // result: 543210-2
 }
 }
