@@ -16,4 +16,12 @@ int main()
     cout << --i;
     // result: 543210-2
 } */
+
+/* // exercise 2
+{
+    for(int i = 5; i > 0; i--)
+        cout << i;
+    cout << i;
+    // result: ошибка компиляции
+} */
 }
