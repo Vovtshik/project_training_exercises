@@ -69,3 +69,13 @@ void main()
 }
 // result compilation error (void main() - return value cannot be void) 
 */
+
+/* 
+void main()
+{
+    int mas[5] = {0,1,2,3,4};
+    int* ad = mas + 2;
+    cout << *(mas + 2) + *(ad + 2);
+}
+// result compilation error (void main() - main' must return 'int') 
+*/
