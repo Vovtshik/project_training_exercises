@@ -28,7 +28,7 @@ int main()
 */
 
 /* 
-// exercice 3
+// exercise 3
  void F(int& x, int& y)
 {
     cout << x++ << --y;
@@ -40,3 +40,21 @@ int main()
     cout << a;
     // result: compilation error
 } */
+
+/* 
+//exercise 4
+void F(const int* x)
+{
+    for(int i = 0; i < 3; i++)
+        x[i] += 2;
+}
+void main()
+{
+    int mas[] = {1, 2, 3};
+    f(mas);
+    for(int i = 0; i < 3; i++)
+        cout << mas[i];
+}
+
+// result:
+ */
