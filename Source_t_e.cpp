@@ -95,3 +95,18 @@ void main()
 }
 // result compilation error (void main() - main' must return 'int')  
 */
+
+/* 
+class A{
+    private:
+        char l;
+    public:
+        A() {};
+        int print() {cout << l; return 1;}
+};
+int main()
+{
+    A a1;
+    int rez = a1.print();
+}
+ */
