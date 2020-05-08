@@ -169,8 +169,10 @@ void Test()
 // result compilation error (undefined reference to `WinMain')
  */
 
-
-class Exc :public exception {
+/* 
+//exercise 12
+class Exc : exception                      //class Exc :public exception 
+{
     public:
     Exc() :exception() {}
 };
@@ -184,7 +186,11 @@ public:
         return "Ok";
     }
 };
-void f() {
-    try {cout << A(a(10)).g(19);}
+void f()                                  //int main()
+{
+    try {cout << (A(10)).g(19);}
     catch (Exc e) {cout << e.what(); }
 }
+//  result compilation error (перед указанием базового класса exception для класса Exc 
+// ожидается квалификатор public; отсутствие главной функции main)
+ */
