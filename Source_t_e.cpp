@@ -110,3 +110,18 @@ int main()
     int rez = a1.print();
 }
  */
+
+/* 
+class A{
+    private:
+        char l;
+    public:
+        A() : l('L') {};
+        void print() { cout << l;}
+};
+int main()
+{
+    A a1;
+    a1.print();
+}
+ */
