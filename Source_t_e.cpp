@@ -38,7 +38,7 @@ int main()
     int a = 5;
     F(a, 6);
     cout << a;
-    // result: compilation error
+    // result: compilation error (void F(int& x, int& y) - return value cannot be void)
 } */
 
 /* 
@@ -56,5 +56,16 @@ void main()
         cout << mas[i];
 }
 
-// result:
+// result compilation error (void F(const int* x) - return value cannot be void)
  */
+
+/* 
+void main()
+{
+    char* ptr = new char('a');
+    char* ptr2 = ptr;
+    ptr = new char('b');
+    cout << *ptr << *ptr2;
+}
+// result compilation error (void main() - return value cannot be void) 
+*/
