@@ -60,6 +60,7 @@ void main()
  */
 
 /* 
+//exercise 5
 void main()
 {
     char* ptr = new char('a');
@@ -71,6 +72,7 @@ void main()
 */
 
 /* 
+//exercise 6
 void main()
 {
     int mas[5] = {0,1,2,3,4};
@@ -81,6 +83,7 @@ void main()
 */
 
 /* 
+//exercise 7
 void F(int* x)
 {
     for(int i = 0; i < 3; i++)
@@ -97,6 +100,7 @@ void main()
 */
 
 /* 
+//exercise 8
 class A{
     private:
         char l;
@@ -112,6 +116,7 @@ int main()
  */
 
 /* 
+//exercise 9
 class A{
     private:
         char l;
