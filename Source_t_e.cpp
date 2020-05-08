@@ -131,7 +131,8 @@ int main()
 }
  */
 
-/* 
+/*
+//exercise 10 
 class A{
     private:
         int a;
