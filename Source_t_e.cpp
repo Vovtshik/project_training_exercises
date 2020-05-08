@@ -79,3 +79,19 @@ void main()
 }
 // result compilation error (void main() - main' must return 'int') 
 */
+
+/* 
+void F(int* x)
+{
+    for(int i = 0; i < 3; i++)
+        x[i] += 2;
+}
+void main()
+{
+    int mas[] = {1,2,3};
+    F(mas);
+    for(int i = 0; i < 3; i++)
+        cout << mas[i];
+}
+// result compilation error (void main() - main' must return 'int')  
+*/
