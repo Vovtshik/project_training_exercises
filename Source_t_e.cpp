@@ -150,3 +150,21 @@ void Test()
 }
 // result compilation error (undefined reference to `WinMain')
  */
+
+/* 
+//exercise 10 
+class A{
+    private:
+        int a;
+    public:
+        A() :a(0) {cout << '1' << a;}
+        A(int y) :a(y) {cout << '2' << a;}
+        A(const A& x) :a(x.a) {cout << '3' << a;}
+};
+void Test()
+{
+    A a(5);
+    A b(3.2);
+}
+// result compilation error (undefined reference to `WinMain')
+ */
