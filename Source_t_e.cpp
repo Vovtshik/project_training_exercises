@@ -168,3 +168,23 @@ void Test()
 }
 // result compilation error (undefined reference to `WinMain')
  */
+
+
+class Exc :public exception {
+    public:
+    Exc() :exception() {}
+};
+class A{
+    int x;
+public:
+    A(int i) :x(i) {}
+
+    const string g(int i) {
+        if(i>x) throw Exc();
+        return "Ok";
+    }
+};
+void f() {
+    try {cout << A(a(10)).g(19);}
+    catch (Exc e) {cout << e.what(); }
+}
