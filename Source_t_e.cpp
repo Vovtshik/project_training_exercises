@@ -14,18 +14,18 @@ int i = 5;
     cout << --i;
     // result: 543210-2
 } 
-*/
+ */
 
-/*
+/* 
 // exercise 2
 int main()
 {
-    for(int i = 5; i > 0; i--)
+    for(int i = 5; i > 0; i--)    // область видимости переменной i - только этот цикл, за пределами его переменна€ i - скрыта
         cout << i;
-    cout << i;
+    cout << i;                    // идентификатор "i" не определен       
     // result: compilation error
 } 
-*/
+ */
 
 /* 
 // exercise 3
@@ -33,54 +33,56 @@ int main()
 {
     cout << x++ << --y;
 }
- void main()
+ void main()                      // ошибка: главна€ функци€ main должна возвращать int
 {
     int a = 5;
-    F(a, 6);
+    F(a, 6);                      //начальное значение ссылки на неконстантный параметр должно быть левосторонним значением (6 - не lvalue)
     cout << a;
-    // result: compilation error (void F(int& x, int& y) - return value cannot be void)
-} */
+    // result: compilation error 
+}
+ */
 
 /* 
 //exercise 4
-void F(const int* x)
+void F(const int* x)              // неправильна€ передача массива, нужно кроме указател€ на первый элемент передать и колличество елементов
 {
     for(int i = 0; i < 3; i++)
-        x[i] += 2;
+        x[i] += 2;                // ошибка: 1) обращение по индексу к переменной типа int; 2) x объ€влен как const и не может быть левосторонним значением дл€ присваивани€
 }
-void main()
+void main()                       // ошибка: главна€ функци€ main должна возвращать int
 {
     int mas[] = {1, 2, 3};
-    f(mas);
+    F(mas);
     for(int i = 0; i < 3; i++)
         cout << mas[i];
 }
 
-// result compilation error (void F(const int* x) - return value cannot be void)
+// result compilation error 
  */
 
 /* 
 //exercise 5
-void main()
+void main()                         //int main()
 {
     char* ptr = new char('a');
     char* ptr2 = ptr;
     ptr = new char('b');
     cout << *ptr << *ptr2;
 }
-// result compilation error (void main() - return value cannot be void) 
-*/
+// result compilation error (void main() - главна€ функци€ main должна возвращать int) 
+
+ */
 
 /* 
 //exercise 6
-void main()
+void main()                         //int main()
 {
     int mas[5] = {0,1,2,3,4};
     int* ad = mas + 2;
     cout << *(mas + 2) + *(ad + 2);
 }
-// result compilation error (void main() - main' must return 'int') 
-*/
+// result compilation error (void main() - главна€ функци€ main должна возвращать int) 
+ */
 
 /* 
 //exercise 7
@@ -89,15 +91,16 @@ void F(int* x)
     for(int i = 0; i < 3; i++)
         x[i] += 2;
 }
-void main()
+ void main()                         //int main()
 {
     int mas[] = {1,2,3};
     F(mas);
     for(int i = 0; i < 3; i++)
         cout << mas[i];
 }
-// result compilation error (void main() - main' must return 'int')  
-*/
+// result compilation error (void main() - главна€ функци€ main должна возвращать int)  
+ */
+
 
 /* 
 //exercise 8
@@ -131,26 +134,6 @@ int main()
 }
  */
 
-/*
-//exercise 10 
-class A{
-    private:
-        int a;
-    public:
-        A() :a(0) {cout << '1' << a;}
-        A(int y) :a(y) {cout << '2' << a;}
-        A(const A& x) :a(x.a) {cout << '3' << a;}
-};
-void Test()
-{
-    A a(1);
-    A *arr = &a;
-    arr = new A(a);
-
-}
-// result compilation error (undefined reference to `WinMain')
- */
-
 /* 
 //exercise 10 
 class A{
@@ -161,12 +144,32 @@ class A{
         A(int y) :a(y) {cout << '2' << a;}
         A(const A& x) :a(x.a) {cout << '3' << a;}
 };
-void Test()
+void Test()                              //int main()
+{
+    A a(1);
+    A *arr = &a;
+    arr = new A(a);
+
+}
+// result compilation error (отсутствие главной функции main)
+ */
+
+/* 
+//exercise 11 
+class A{
+    private:
+        int a;
+    public:
+        A() :a(0) {cout << '1' << a;}
+        A(int y) :a(y) {cout << '2' << a;}
+        A(const A& x) :a(x.a) {cout << '3' << a;}
+};
+void Test()                               //int main()
 {
     A a(5);
     A b(3.2);
 }
-// result compilation error (undefined reference to `WinMain')
+// result compilation error (отсутствие главной функции main)
  */
 
 /* 
