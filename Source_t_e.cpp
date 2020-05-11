@@ -198,8 +198,17 @@ void f()                                  //int main()
 // ожидается квалификатор public; отсутствие главной функции main)
  */
 
+/*
+//exercise 13 
 #include <cstring>
-class Exc : public exception
+class Exc : exception
+{
+    public:
+        Exc() :exception() {}
+        Exc(const string& s) : exception(s.c_str()) {}
+        virtual const char* what() const throw() {return exception::what();}
+};*/
+/* class Exc : public exception                   // Вариант рабочего класса с конструтором Exc(const string& s)
 {
     string str;
     public:
@@ -208,8 +217,8 @@ class Exc : public exception
             str = s;
         }
         virtual const char* what() const throw() {return str.c_str();}
-};
-class A
+}; */
+/*class A
 {
     string x;
     public:
@@ -219,7 +228,7 @@ class A
         return x;
     }
 };
-/* void F() */int main() {
+void F() {                                        //int main()
     try{
         A a("10");
         cout << a.g("20");
@@ -227,3 +236,9 @@ class A
     catch(const Exc & e) { cout << e.what(); }
     cout << ":)";
 }
+// result compilation error (перед указанием базового класса exception для класса Exc
+// ожидается квалификатор public; 
+// ошибка в строке инициализации базовой части конструктора Exc(const string& s) - базовый класс exception
+// не имеет конструктора с аргументами; класс Exc можно переделать как показанно в коде что бы принимал аргумет;
+// отсутствие главной функции main) 
+*/
