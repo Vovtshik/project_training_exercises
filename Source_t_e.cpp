@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-/* 
+/*
 // exercise 1
 int main()
 {
@@ -13,21 +13,21 @@ int i = 5;
     } while(i-- > 0);
     cout << --i;
     // result: 543210-2
-} 
+}
  */
 
-/* 
+/*
 // exercise 2
 int main()
 {
     for(int i = 5; i > 0; i--)    // область видимости переменной i - только этот цикл, за пределами его переменная i - скрыта
         cout << i;
-    cout << i;                    // идентификатор "i" не определен       
+    cout << i;                    // идентификатор "i" не определен
     // result: compilation error
-} 
+}
  */
 
-/* 
+/*
 // exercise 3
  void F(int& x, int& y)
 {
@@ -38,11 +38,11 @@ int main()
     int a = 5;
     F(a, 6);                      //начальное значение ссылки на неконстантный параметр должно быть левосторонним значением (6 - не lvalue)
     cout << a;
-    // result: compilation error 
+    // result: compilation error
 }
  */
 
-/* 
+/*
 //exercise 4
 void F(const int* x)              // неправильная передача массива, нужно кроме указателя на первый элемент передать и колличество елементов
 {
@@ -57,10 +57,10 @@ void main()                       // ошибка: главная функция main должна возвращ
         cout << mas[i];
 }
 
-// result compilation error 
+// result compilation error
  */
 
-/* 
+/*
 //exercise 5
 void main()                         //int main()
 {
@@ -69,11 +69,11 @@ void main()                         //int main()
     ptr = new char('b');
     cout << *ptr << *ptr2;
 }
-// result compilation error (void main() - главная функция main должна возвращать int) 
+// result compilation error (void main() - главная функция main должна возвращать int)
 
  */
 
-/* 
+/*
 //exercise 6
 void main()                         //int main()
 {
@@ -81,10 +81,10 @@ void main()                         //int main()
     int* ad = mas + 2;
     cout << *(mas + 2) + *(ad + 2);
 }
-// result compilation error (void main() - главная функция main должна возвращать int) 
+// result compilation error (void main() - главная функция main должна возвращать int)
  */
 
-/* 
+/*
 //exercise 7
 void F(int* x)
 {
@@ -98,11 +98,11 @@ void F(int* x)
     for(int i = 0; i < 3; i++)
         cout << mas[i];
 }
-// result compilation error (void main() - главная функция main должна возвращать int)  
+// result compilation error (void main() - главная функция main должна возвращать int)
  */
 
 
-/* 
+/*
 //exercise 8
 class A{
     private:
@@ -118,7 +118,7 @@ int main()
 }
  */
 
-/* 
+/*
 //exercise 9
 class A{
     private:
@@ -134,8 +134,8 @@ int main()
 }
  */
 
-/* 
-//exercise 10 
+/*
+//exercise 10
 class A{
     private:
         int a;
@@ -154,8 +154,8 @@ void Test()                              //int main()
 // result compilation error (отсутствие главной функции main)
  */
 
-/* 
-//exercise 11 
+/*
+//exercise 11
 class A{
     private:
         int a;
@@ -172,9 +172,9 @@ void Test()                               //int main()
 // result compilation error (отсутствие главной функции main)
  */
 
-/* 
+/*
 //exercise 12
-class Exc : exception                      //class Exc :public exception 
+class Exc : exception                      //class Exc :public exception
 {
     public:
     Exc() :exception() {}
@@ -194,6 +194,36 @@ void f()                                  //int main()
     try {cout << (A(10)).g(19);}
     catch (Exc e) {cout << e.what(); }
 }
-//  result compilation error (перед указанием базового класса exception для класса Exc 
+//  result compilation error (перед указанием базового класса exception для класса Exc
 // ожидается квалификатор public; отсутствие главной функции main)
  */
+
+#include <cstring>
+class Exc : public exception
+{
+    string str;
+    public:
+        Exc() :exception() {}
+        Exc(const string& s) : exception() {
+            str = s;
+        }
+        virtual const char* what() const throw() {return str.c_str();}
+};
+class A
+{
+    string x;
+    public:
+    A(string i) :x(i) {}
+    const string& g(const string& i) {
+        if(i>x) throw Exc("Over");
+        return x;
+    }
+};
+/* void F() */int main() {
+    try{
+        A a("10");
+        cout << a.g("20");
+    }
+    catch(const Exc & e) { cout << e.what(); }
+    cout << ":)";
+}
