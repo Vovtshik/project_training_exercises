@@ -242,3 +242,24 @@ void F() {                                        //int main()
 // не имеет конструктора с аргументами; класс Exc можно переделать как показанно в коде что бы принимал аргумет;
 // отсутствие главной функции main) 
 */
+
+
+//exercise 14
+class A {
+public:
+    void print() {cout << "A";}
+};
+class B {
+public:
+    void print() {cout << "B";}
+};
+void F() {
+    A a;
+    a.print();
+    B b;
+    b.print();
+    A* p = &a;
+    p->print();
+    p = &b;
+    p->print();
+}
