@@ -269,7 +269,7 @@ void F() {
  */
 
 /* 
-//exercise 14
+//exercise 15
 class A {
 public:
     virtual void print() = 0;
