@@ -1,1 +1,2 @@
-exception
+ A* p = &a;
+    p->print();
