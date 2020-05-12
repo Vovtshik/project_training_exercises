@@ -312,3 +312,30 @@ int main() //void F()               //  void F() - нужно заменить  главной функц
     B mas[10];                      // для создания этого массива нужен конструктор по умолчанию (т.е. без явных инициализирующих аргументов)
 }
  */
+
+
+
+//exercise 17
+struct A {
+    char i;
+    A() : i('0') {}
+    A(const A& a) : i(a.i) {cout << "AC" << i;}
+    A(char ii) : i(ii) {cout << "A" << i;}
+};
+struct B : virtual A {
+    B() {}
+    B(const B& b) {cout << "BC" << i;}
+    B(char ii) : A(ii) {cout << "B" << i;}
+};
+struct D : virtual A {
+    D() {}
+    D(const D& d) {cout << "DC" << i;}
+    D(char ii) : A(ii) {cout << "D" << i;}
+};
+struct E : B, D {
+    E(char ii) : A(), B(), D() {}
+};
+int main()/* void F() */{
+    E e('a');
+    E e1 = e;
+}
