@@ -346,3 +346,14 @@ int main() //void F()             //  void F() - нужно заменить  главной функцие
 
 
 //exercise 17
+#include<vector>
+int main() {
+    vector<int> v1;
+    v1.insert(v1.begin(), 3);
+    v1.push_back(7);
+    v1.push_back(4);
+    v1[2] = 9;
+    v1.front() = 6;
+    for(int i = 0; i < v1.size(); i++)
+        cout << v1[i];
+}
