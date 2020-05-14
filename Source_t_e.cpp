@@ -334,7 +334,6 @@ struct D : virtual A {
 };
 struct E : B, D {
     E(char ii) : A(), B(), D() {}
-    E(const E& e) : A(const A& a), B(const B& b), D(const D& d) {}
 };
 int main()/* void F() */{
     E e('a');
