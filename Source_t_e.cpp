@@ -335,7 +335,8 @@ struct D : virtual A {
 struct E : B, D {
     E(char ii) : A(), B(), D() {}
 };
-int main()/* void F() */{
+int main()/* void F() */{             //  void F() - нужно заменить  главной функцией int main()
     E e('a');
     E e1 = e;
 }
+// result: AC0BC0DC0
