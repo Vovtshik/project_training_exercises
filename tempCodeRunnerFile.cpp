@@ -1,2 +1,2 @@
- A* p = &a;
-    p->print();
+
+    v1.push_back(7);
