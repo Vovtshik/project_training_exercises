@@ -363,6 +363,7 @@ int main() {
 
 
  //exercise 17
+ #include<set>
  int main()//void main() 
  {
      unsigned u[] = {2, 40, 3, 2 , 40};
