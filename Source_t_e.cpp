@@ -344,7 +344,7 @@ int main() //void F()             //  void F() - нужно заменить  главной функцие
  */
 
 
-
+/* 
 //exercise 17
 #include<vector>
 int main() {
@@ -357,3 +357,5 @@ int main() {
     for(int i = 0; i < v1.size(); i++)
         cout << v1[i];
 }
+// result: 679
+ */
