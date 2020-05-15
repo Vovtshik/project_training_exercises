@@ -359,3 +359,14 @@ int main() {
 }
 // result: 679
  */
+
+
+
+ //exercise 17
+ void main() {
+     unsigned u[] = {2, 40, 3, 2 , 40};
+     set<unsigned> a(u, u + 5);
+     set<unsigned>::iterator f = find(a.begin(), a.end(), 3);
+     unsigned (f != a.end()) s += *f++;
+     cout << s;
+ }
