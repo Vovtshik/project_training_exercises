@@ -268,7 +268,7 @@ void F() {
 // отсутствие главной функции main
  */
 
-/* 
+/*
 //exercise 15
 class A {
 public:
@@ -281,7 +281,7 @@ public:
 void F() {                     // int main() - отсутствие главной функции main
     A a;                       // нельзя создавать объекты абстрактного класса;
     B b;
-    A* p;                          
+    A* p;
     p->print();                // нельзя вызывать чистые методы абстрактного класса;
     p = &b;
     p->print();
@@ -293,7 +293,7 @@ void F() {                     // int main() - отсутствие главной функции main
  */
 
 
-/* 
+/*
 //exercise 16
 class A {
     int a;
@@ -314,7 +314,7 @@ int main() //void F()               //  void F() - нужно заменить  главной функц
  */
 
 
-/* 
+/*
 //exercise 17
 struct A {
     char i;
@@ -336,7 +336,7 @@ struct E : B, D {
     E(char ii) : A(), B(), D() {}
 };
 int main() //void F()             //  void F() - нужно заменить  главной функцией int main()
-{             
+{
     E e('a');
     E e1 = e;
 }
@@ -344,8 +344,8 @@ int main() //void F()             //  void F() - нужно заменить  главной функцие
  */
 
 
-/* 
-//exercise 17
+/*
+//exercise 18
 #include<vector>
 int main() {
     vector<int> v1;
@@ -362,13 +362,15 @@ int main() {
 
 
 
- //exercise 17
+ //exercise 19
  #include<set>
- int main()//void main() 
+ int main()//void main()
  {
      unsigned u[] = {2, 40, 3, 2 , 40};
      set<unsigned> a(u, u + 5);
-     set<unsigned>::iterator f = find(a.begin(), a.end(), 3);
-     unsigned (f != a.end()) s += *f++;
+     //const unsigned tree = 3;
+     set<unsigned>::iterator f = /* a.find(3) */ find(a.begin(), a.end(), 3);
+     unsigned s = 0;
+     while (f != a.end()) s += *f++;
      cout << s;
  }
