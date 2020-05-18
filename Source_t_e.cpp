@@ -381,10 +381,12 @@ int main() {
 /*
  //exercise 20
  #include<vector>
- int main() {
-     vector<int> q(5);
+ int main() {                             //void main()
+     vector<int> q(5);                    //vector<int> q;
      for(int i = 0; i < 5; i++) q[i] = i;
      cout << q.size() << q.back();
  }
- // result: ошибка компил€ции (главна€ функци€ не может возвращать void); eсли помен€ть void main() на int main() - то результат 54)
+ // result: ошибка компил€ции (попытка присвоить значени€ елементам пустого массива; 
+ // главна€ функци€ не может возвращать void); eсли помен€ть void main() на int main()
+ // и при создании вектора указать колличество елементов (5) - то результат 54)
  */
