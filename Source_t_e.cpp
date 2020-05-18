@@ -381,7 +381,7 @@ int main() {
 
  //exercise 20
  #include<vector>
- void main() {
+ int main() {
      vector<int> q;
      for(int i = 0; i < 5; i++) q[i] = i;
      cout << q.size() << q.back();
