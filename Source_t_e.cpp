@@ -368,7 +368,6 @@ int main() {
  {
      unsigned u[] = {2, 40, 3, 2 , 40};
      set<unsigned> a(u, u + 5);
-     //const unsigned tree = 3;
      set<unsigned>::iterator f = /* a.find(3) */ find(a.begin(), a.end(), 3);
      unsigned s = 0;
      while (f != a.end()) s += *f++;
