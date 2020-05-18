@@ -378,11 +378,13 @@ int main() {
  */
 
 
-
+/*
  //exercise 20
  #include<vector>
  int main() {
-     vector<int> q;
+     vector<int> q(5);
      for(int i = 0; i < 5; i++) q[i] = i;
      cout << q.size() << q.back();
  }
+ // result: ошибка компил€ции (главна€ функци€ не может возвращать void); eсли помен€ть void main() на int main() - то результат 54)
+ */
