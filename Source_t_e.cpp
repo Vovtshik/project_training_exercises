@@ -379,4 +379,10 @@ int main() {
 
 
 
- //exercise 19
+ //exercise 20
+ #include<vector>
+ void main() {
+     vector<int> q;
+     for(int i = 0; i < 5; i++) q[i] = i;
+     cout << q.size() << q.back();
+ }
