@@ -368,8 +368,10 @@ int main() {
  {
      unsigned u[] = {2, 40, 3, 2 , 40};
      set<unsigned> a(u, u + 5);
-     set<unsigned>::iterator f = /* a.find(3) */ find(a.begin(), a.end(), 3);
+     set<unsigned>::iterator f = a.find(3) /* find(a.begin(), a.end(), 3) */;
      unsigned s = 0;
      while (f != a.end()) s += *f++;
      cout << s;
  }
+// result: 43 (если возвращаемое значение в функции main поменять на int; a.find(3) 
+// не работает в Visual Studio Code a в Viseal Studio 2017 работает)
