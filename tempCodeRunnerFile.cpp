@@ -1,2 +1,1 @@
-
-    v1.push_back(7);
+find(a.begin(), a.end(), 3)
