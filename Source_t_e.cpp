@@ -392,7 +392,7 @@ int main() {
  */
 
 
-
+/* 
 //exercise 21
 #include<cstring>
 template <class T> void swapn(T& x, T& y) {
@@ -414,7 +414,7 @@ struct A {
     friend ostream& operator<<(ostream& os, A& obj) { cout << obj.m; }  //дописанно для илюстрации результата 
 };
 
-/* void F */int main() {
+int main() {                                                          // void F() 
     A a("abc"), b("10");
     char d[] = {'1', '2', '\0'}, c[] = {'A', 'B', 'C', '\0'};
     
@@ -444,7 +444,7 @@ struct A {
     swapn(a.m, d);
     cout << "after: ";                                                //дописанно для илюстрации результата
     show(a.m, d);                                                     //дописанно для илюстрации результата
-}
+} */
 //result: 1 2 3 5 (при условии eсли поменять void F() на int main() и 
 // закоментировать пятый вызов функции swapn (swapn<int*>(c, d)))
 
