@@ -393,4 +393,34 @@ int main() {
 
 
 
-//exercise 20
+//exercise 21
+template <class T> void swap(T& x, T& y) {
+    T temp = x; x = y; y = temp;
+}
+void swapn(char* s1, char* s2) {
+    unsigned size = (strlen(s1) >= strlen(s2)) ? strlen(s1) : strlen(s2);
+    char* temp = new char[size + 1];
+    strcpy(temp, s1); strcpy(s1, s2); strcpy(s2, temp);
+}
+struct A {
+    char* m;
+    A(const char* x) :m(new char[strlen(x) + 1]) {strcpy(m, x); }
+    A(const A& a) :m(new char[strlen(a.m) + 1]) { strcpy(m, a.m); }
+    A& operator=(const A& a) { delete[] m; m = new char[strlen(a.m) + 1]; strcpy(m, a.m); return *this; }
+};
+void F() {
+    A a("abc"), b("10");
+    char d[] = {'1', '2', '\0'}, c[] = {'A', 'B', 'C', '\0'};
+    
+    //1
+    swapn(a, b);
+    //2
+    swapn<char*>(a.m, b.m);
+    //3
+    swapn(c, d);
+    //4
+    swapn<int*>(c, d);
+    //5
+    swapn(a.m, d);
+}
+
