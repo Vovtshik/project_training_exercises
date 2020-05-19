@@ -486,4 +486,4 @@ int main()                                           // исправленно: вместо void
 
 
 
-//exercise 22
+//exercise 23
