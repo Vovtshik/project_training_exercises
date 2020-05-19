@@ -394,6 +394,7 @@ int main() {
 
 
 //exercise 21
+#include<cstring>
 template <class T> void swapn(T& x, T& y) {
     T temp = x; x = y; y = temp;
 }
@@ -402,25 +403,64 @@ void swapn(char* s1, char* s2) {
     char* temp = new char[size + 1];
     strcpy(temp, s1); strcpy(s1, s2); strcpy(s2, temp);
 }
+template <class T1, class T2> ostream& show(T1& ar1, T2& ar2) {         //дописанно для илюстрации результата
+    cout << ar1 << " - " << ar2 << "\n";
+}
 struct A {
     char* m;
     A(const char* x) :m(new char[strlen(x) + 1]) {strcpy(m, x); }
     A(const A& a) :m(new char[strlen(a.m) + 1]) { strcpy(m, a.m); }
     A& operator=(const A& a) { delete[] m; m = new char[strlen(a.m) + 1]; strcpy(m, a.m); return *this; }
+    friend ostream& operator<<(ostream& os, A& obj) { cout << obj.m; }  //дописанно для илюстрации результата 
 };
-void F() {
+
+/* void F */int main() {
     A a("abc"), b("10");
     char d[] = {'1', '2', '\0'}, c[] = {'A', 'B', 'C', '\0'};
     
     //1
+    cout << "before: ";                                               //дописанно для илюстрации результата
+    show(a, b);                                                       //дописанно для илюстрации результата
     swapn(a, b);
+    cout << "after: ";                                                //дописанно для илюстрации результата
+    show(a, b);                                                       //дописанно для илюстрации результата
     //2
+    cout << "\nbefore: ";                                             //дописанно для илюстрации результата
+    show(a.m, b.m);                                                   //дописанно для илюстрации результата
     swapn<char*>(a.m, b.m);
+    cout << "after: ";                                                //дописанно для илюстрации результата
+    show(a.m, b.m);                                                   //дописанно для илюстрации результата
     //3
+    cout << "\nbefore: ";                                             //дописанно для илюстрации результата
+    show(c, d);                                                       //дописанно для илюстрации результата
     swapn(c, d);
+    cout << "after: ";                                                //дописанно для илюстрации результата
+    show(c, d);                                                       //дописанно для илюстрации результата
     //4
-    swapn<int*>(c, d);
+    //swapn<int*>(c, d);                                              //ошибка: не соотвецтвие аргументов типу экземпляра шаблона
     //5
+    cout << "\nbefore: ";                                             //дописанно для илюстрации результата
+    show(a.m, d);                                                     //дописанно для илюстрации результата
     swapn(a.m, d);
+    cout << "after: ";                                                //дописанно для илюстрации результата
+    show(a.m, d);                                                     //дописанно для илюстрации результата
 }
+//result: 1 2 3 5 (при условии eсли поменять void F() на int main() и 
+// закоментировать пятый вызов функции swapn (swapn<int*>(c, d)))
+
+/* для илюстрации работы функции swapn дописанно функцию вывода на экран show и дружественную функцию 
+operator<< для класса А
+В результате следующий вывод на экран:
+ before: abc - 10
+after: 10 - abc
+
+before: 10 - abc
+after: abc - 10
+
+before: ABC - 12
+after: 12 - ABC
+
+before: abc - ABC
+after: ABC - abc
+ */
 
