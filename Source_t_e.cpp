@@ -5,16 +5,20 @@ using namespace std;
 
 /*
 // exercise 1
-int main()
+int main()                                           // исправленно: вместо void main() вставленно int main()
 {
-int i = 5;
-    do {
+    int i = 5;
+    do
+    {
         cout << i;
-    } while(i-- > 0);
+    } while (i-- > 0);
     cout << --i;
-    // result: 543210-2
 }
+//result: ошибка компиляции (функция main должна возвращать int a не void)
+//если void main() поменять int main(), то результат: 543210-2 
  */
+
+
 
 /*
 // exercise 2
@@ -26,6 +30,8 @@ int main()
     // result: compilation error
 }
  */
+
+
 
 /*
 // exercise 3
@@ -41,6 +47,8 @@ int main()
     // result: compilation error
 }
  */
+
+
 
 /*
 //exercise 4
@@ -60,6 +68,8 @@ void main()                       // ошибка: главная функция main должна возвращ
 // result compilation error
  */
 
+
+
 /*
 //exercise 5
 void main()                         //int main()
@@ -73,6 +83,8 @@ void main()                         //int main()
 
  */
 
+
+
 /*
 //exercise 6
 void main()                         //int main()
@@ -83,6 +95,8 @@ void main()                         //int main()
 }
 // result compilation error (void main() - главная функция main должна возвращать int)
  */
+
+
 
 /*
 //exercise 7
@@ -102,6 +116,7 @@ void F(int* x)
  */
 
 
+
 /*
 //exercise 8
 class A{
@@ -118,6 +133,8 @@ int main()
 }
  */
 
+
+
 /*
 //exercise 9
 class A{
@@ -133,6 +150,8 @@ int main()
     a1.print();
 }
  */
+
+
 
 /*
 //exercise 10
@@ -154,6 +173,8 @@ void Test()                              //int main()
 // result compilation error (отсутствие главной функции main)
  */
 
+
+
 /*
 //exercise 11
 class A{
@@ -171,6 +192,8 @@ void Test()                               //int main()
 }
 // result compilation error (отсутствие главной функции main)
  */
+
+
 
 /*
 //exercise 12
@@ -197,6 +220,8 @@ void f()                                  //int main()
 //  result compilation error (перед указанием базового класса exception для класса Exc
 // ожидается квалификатор public; отсутствие главной функции main)
  */
+
+
 
 /*
 //exercise 13
@@ -243,6 +268,8 @@ void F() {                                        //int main()
 // отсутствие главной функции main)
 */
 
+
+
 /*
 //exercise 14
 class A {
@@ -267,6 +294,8 @@ void F() {
 // указателю на объект класса А нельзя присвоить адрес объекта класса В;
 // отсутствие главной функции main
  */
+
+
 
 /*
 //exercise 15
@@ -293,6 +322,7 @@ void F() {                     // int main() - отсутствие главной функции main
  */
 
 
+
 /*
 //exercise 16
 class A {
@@ -312,6 +342,7 @@ int main() //void F()               //  void F() - нужно заменить  главной функц
     B mas[10];                      // для создания этого массива нужен конструктор по умолчанию (т.е. без явных инициализирующих аргументов)
 }
  */
+
 
 
 /*
@@ -344,6 +375,7 @@ int main() //void F()             //  void F() - нужно заменить  главной функцие
  */
 
 
+
 /*
 //exercise 18
 #include<vector>
@@ -359,6 +391,7 @@ int main() {
 }
 // result: 679
  */
+
 
 
 /* 
@@ -378,6 +411,7 @@ int main() {
  */
 
 
+
 /*
  //exercise 20
  #include<vector>
@@ -390,6 +424,7 @@ int main() {
  // главная функция не может возвращать void); eсли поменять void main() на int main()
  // и при создании вектора указать колличество елементов (5) - то результат 54)
  */
+
 
 
 /* 
@@ -465,6 +500,7 @@ after: ABC - abc
  */
 
 
+
 /* 
 //exercise 22
 int main()                                           // исправленно: вместо void main() вставленно int main()
@@ -484,8 +520,9 @@ int main()                                           // исправленно: вместо void
 // Если исправить эти ошибки получим результат: bcde
 
 
-/* 
 
+
+/* 
 //exercise 23
 int main()                                           // исправленно: вместо void main() вставленно int main()
 {
@@ -499,18 +536,3 @@ int main()                                           // исправленно: вместо void
 // функция main должна возвращать int a не void)
 
 // Если исправить эти ошибки получим результат: fedcb
-
-
-
-//exercise 24
-int main()                                           // исправленно: вместо void main() вставленно int main()
-{
-    int i = 5;
-    do
-    {
-        cout << i;
-    } while (i-- > 0);
-    cout << --i;
-}
-//result: ошибка компиляции (функция main должна возвращать int a не void)
-//если void main() поменять int main(), то результат: 543210-2 
