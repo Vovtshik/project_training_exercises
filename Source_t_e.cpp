@@ -467,3 +467,17 @@ after: ABC - abc
 
 
 //exercise 22
+int main()                                           // исправленно: вместо void main() вставленно int main()
+{
+    const char* text = "abcdef";                     // исправленно: добавлен квалификатор const (const char* text )
+    int i = 0;
+    do
+    {
+        cout << text[++i];
+    } while (i != 4);
+    
+}
+//result: ошибка компиляции (указателю на чар присвоен константная строка и 
+// функция main должна возвращать int a не void)
+
+// Если исправить эти ошибки получим результат: bcde
